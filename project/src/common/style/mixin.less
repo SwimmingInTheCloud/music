@@ -1,0 +1,64 @@
+.w(@w){
+  width:unit(@w/@remSize,rem);
+}
+.h(@h){
+  height:unit(@h/@remSize,rem);
+}
+.lh(@lh){
+  line-height: unit(@lh/@remSize,rem);
+}
+//margin
+.mt(@mt){
+  margin-top: unit(@mt/@remSize,rem);
+}
+.mb(@mb){
+  margin-bottom: unit(@mb/@remSize,rem);
+}
+.ml(@ml){
+  margin-left: unit(@ml/@remSize,rem);
+}
+.mr(@mr){
+  margin-right: unit(@mr/@remSize,rem);
+}
+.margin(@t,@r,@b,@l){
+  margin-top: unit(@t/@remSize,rem);
+  margin-right: unit(@r/@remSize,rem);
+  margin-bottom: unit(@b/@remSize,rem);
+  margin-left: unit(@l/@remSize,rem);
+}
+//边框
+.bb(@bb){
+  border-bottom: unit(@bb/@remSize,rem);
+}
+//padding
+.pt(@pt){
+  padding-top: unit(@pt/@remSize,rem)
+}
+.pb(@pb){
+  padding-bottom: unit(@pb/@remSize,rem)
+}
+.pl(@pl){
+  padding-left: unit(@pl/@remSize,rem)
+}
+.pr(@pr){
+  padding-right: unit(@pr/@remSize,rem)
+}
+.padding(@t,@r,@b,@l){
+  padding-top: unit(@t/@remSize,rem);
+  padding-right: unit(@r/@remSize,rem);
+  padding-bottom: unit(@b/@remSize,rem);
+  padding-left: unit(@l/@remSize,rem);
+}
+//上下左右
+.top(@t){
+  top:unit(@t/@remSize,rem);
+}
+.bottom(@t){
+  bottom:unit(@t/@remSize,rem);
+}
+.left(@t){
+  left:unit(@t/@remSize,rem);
+}
+.right(@t){
+  right:unit(@t/@remSize,rem);
+}
