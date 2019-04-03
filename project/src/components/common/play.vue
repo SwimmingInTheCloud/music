@@ -6,7 +6,7 @@
         </div>
         <div class="up">
           <div class="nav">
-            <span @click="change">↓</span>
+            <span @click="change" class="iconfont icon-chevron-down"></span>
             <span class="tit">{{currentSong.musicData.songname}}</span>
           </div>
           <h2 class="name">{{currentSong.musicData.singer[0].name}}</h2>
@@ -22,7 +22,7 @@
               <span @click="prev" class="iconfont icon-A_-shangyishou"></span>
             </div>
             <div class="stop">
-              <span @click="play" class="iconfont icon-bofang"></span>
+              <span @click="play"  :class="this.rotate?'iconfont icon-zanting':'iconfont icon-bofang'"></span>
             </div>
             <div class="next">
               <span @click="next" class="iconfont icon-A_-xiayishou"></span>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div @click="change" class="bottom" v-show="!state">
-        <div class="lImgCorn">
+        <div :class="this.rotate?'lImgCorn littleRotate':'lImgCorn'">
           <img :src='"https://y.gtimg.cn/music/photo_new/T002R300x300M000"+currentSong.musicData.albummid+".jpg?max_age=2592000"' alt="">
         </div>
         <div class="info">
@@ -42,7 +42,7 @@
           <p class="singerName">{{currentSong.musicData.singer[0].name}}</p>
         </div>
         <div class="lControl">
-          <span @click.stop="play" class="iconfont icon-bofang"></span>
+          <span @click.stop="play" :class="this.rotate?'iconfont icon-zanting':'iconfont icon-bofang'"></span>
         </div>
         <div class="sList">
           <span class="iconfont icon-yinleliebiao-copy"></span>
@@ -112,7 +112,7 @@
     /*.w(375);
     height: 100%;*/
     z-index: 30;
-    position: absolute;
+    position: fixed;
     background-color: #222;
   }
   .imgCon{
@@ -129,6 +129,25 @@
     transform-origin: 150px 150px;
     animation: imgCon 20s linear infinite;
   }
+
+  .littleRotate{
+    transition: 0.5s;
+    transform-origin: 20px 20px;
+    animation: limgCon 20s linear infinite;
+  }
+
+@keyframes limgCon {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 @keyframes imgCon {
   0% {
@@ -212,6 +231,9 @@
   .icon-bofang{
     font-size: 40px;
   }
+.icon-zanting{
+  font-size: 35px;
+}
   .bottom{
     background: #333;
     display: flex;
@@ -267,5 +289,11 @@
         font-size: 41px;
       }
     }
+  }
+  .icon-chevron-down{
+    color: #ffcd32;
+    font-size: 22px;
+    position: fixed;
+    left: 20px;
   }
 </style>

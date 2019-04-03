@@ -3,7 +3,7 @@
       <Header></Header>
       <Nav></Nav>
     <keep-alive><router-view></router-view></keep-alive>
-    <Player></Player>
+    <Player class="player"></Player>
   </div>
 </template>
 
@@ -20,12 +20,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+  @import "~commonStyle/index.less";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  .player{
+    position: fixed;
+    z-index: 300;
+    top:0;
+  }
 }
 </style>
